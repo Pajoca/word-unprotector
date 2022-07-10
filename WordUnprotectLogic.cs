@@ -73,7 +73,6 @@ namespace WordUnprotector
             }
         }
 
-
         /// <summary>
         /// Unprotect()実行後、保護解除できなかったファイルや解除非対応なファイルが存在した場合にそれらを表示する警告メッセージを表示する
         /// </summary>
@@ -173,8 +172,8 @@ namespace WordUnprotector
         {
             // 元のファイル名末尾に"_Unprotected"を付与したものを新パスとする
             string newFilePath = Path.Combine(Path.GetDirectoryName(filePath), 
-                                           Path.GetFileNameWithoutExtension(filePath)+"_Unprotected",
-                                           Path.GetExtension(filePath));
+                                           Path.GetFileNameWithoutExtension(filePath)+"_Unprotected")
+                                           + Path.GetExtension(filePath);
             
             if (!File.Exists(newFilePath)) //新パスが既存のファイルと被らなければコピーを作成
             {
@@ -187,8 +186,8 @@ namespace WordUnprotector
             do
             {
                 newFilePath = Path.Combine(Path.GetDirectoryName(filePath),
-                                           Path.GetFileNameWithoutExtension(filePath) + $"({i})",
-                                           Path.GetExtension(filePath));
+                                           Path.GetFileNameWithoutExtension(filePath) + $"({i})")
+                                           + Path.GetExtension(filePath);
                 i++;
             } while (File.Exists(newFilePath));
 
