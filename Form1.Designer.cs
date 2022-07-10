@@ -32,6 +32,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // button1
@@ -86,5 +87,6 @@
         private TextBox textBox1;
         private OpenFileDialog openFileDialog1;
         private Button button2;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }

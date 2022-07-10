@@ -143,8 +143,9 @@ namespace WordUnprotector
                 var documentProtectionElements = document.MainDocumentPart?.DocumentSettingsPart?.Settings.Elements<DocumentProtection>();
 
                 // 要素 <w:documentProtection> が無い場合(そもそも保護されてない場合など)は、作成したコピーを削除し 保護解除失敗リストに追加。メソッドを抜ける。
-                if (documentProtectionElements is null)
+                if (documentProtectionElements is null || documentProtectionElements.Count() == 0)
                 {
+                    document.Close(); // 閉じてからでないと削除できない
                     File.Delete(wordFile);
                     FailedFileList.Add(filePath);
                     return;
@@ -156,6 +157,7 @@ namespace WordUnprotector
                         element.Remove();
                     }
                     document.Save(); // AutoSaveはデフォルトでTrueだから不要かも。
+                    document.Close();
                     UnprotectedFileList.Add(filePath);
                 }
             }
@@ -185,9 +187,9 @@ namespace WordUnprotector
             long i = 1;
             do
             {
-                newFilePath = Path.Combine(Path.GetDirectoryName(filePath),
-                                           Path.GetFileNameWithoutExtension(filePath) + $"({i})")
-                                           + Path.GetExtension(filePath);
+                newFilePath = Path.Combine(Path.GetDirectoryName(newFilePath),
+                                           Path.GetFileNameWithoutExtension(newFilePath) + $"({i})")
+                                           + Path.GetExtension(newFilePath);
                 i++;
             } while (File.Exists(newFilePath));
 

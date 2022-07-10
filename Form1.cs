@@ -23,7 +23,17 @@ namespace WordUnprotector
 
         private void button2_Click(object sender, EventArgs e)
         {
+            var result = folderBrowserDialog1.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                textBox1.Text = folderBrowserDialog1.SelectedPath;
 
+                var filePaths = new List<string>() { folderBrowserDialog1.SelectedPath };
+
+                var wordUnprotectLogic = new WordUnprotectLogic(filePaths);
+                wordUnprotectLogic.Unprotect();
+                wordUnprotectLogic.ShowUnprotectionAlert();
+            }
         }
     }
 }
