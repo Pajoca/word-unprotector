@@ -38,17 +38,17 @@ namespace WordUnprotector
         /// <summary>
         ///  保護解除できたファイルのフルパスリスト
         /// </summary>
-        public List<string> UnprotectedFileList { get; set; } = new();
+        public List<string> UnprotectedFileList { get; private set; } = new();
 
         /// <summary>
         ///  保護解除に失敗したファイルのフルパスリスト(旧形式のファイルで元々保護解除できない場合は除く)
         /// </summary>
-        public List<string> FailedFileList { get; set; } = new();
+        public List<string> FailedFileList { get; private set; } = new();
 
         /// <summary>
         ///  旧形式のファイルのフルパスリスト(旧形式のため保護解除はできない)
         /// </summary>
-        public List<string> OldTypeFileList { get; set; } = new();
+        public List<string> OldTypeFileList { get; private set; } = new();
 
 
         /// <summary>
@@ -187,9 +187,9 @@ namespace WordUnprotector
             long i = 1;
             do
             {
-                newFilePath = Path.Combine(Path.GetDirectoryName(newFilePath),
-                                           Path.GetFileNameWithoutExtension(newFilePath) + $"({i})")
-                                           + Path.GetExtension(newFilePath);
+                newFilePath = Path.Combine(Path.GetDirectoryName(filePath),
+                                           Path.GetFileNameWithoutExtension(filePath) + $"_Unprotected({i})")
+                                           + Path.GetExtension(filePath);
                 i++;
             } while (File.Exists(newFilePath));
 
