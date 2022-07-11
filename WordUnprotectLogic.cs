@@ -136,31 +136,41 @@ namespace WordUnprotector
         {
             var wordFile = CopyFile(filePath);
 
-            using (WordprocessingDocument document = WordprocessingDocument.Open(wordFile, true))
+            try
             {
-                // Word文書の編集保護を指定するXML要素 <w:documentProtection> を取得。
-                // (.docxファイル内の settings.xml の <w:settings> 要素内の <w:documentProtection> 要素を指定している)
-                var documentProtectionElements = document.MainDocumentPart?.DocumentSettingsPart?.Settings.Elements<DocumentProtection>();
+                using (var document = WordprocessingDocument.Open(wordFile, true))
+                {
+                    // Word文書の編集保護を指定するXML要素 <w:documentProtection> を取得。
+                    // (.docxファイル内の settings.xml の <w:settings> 要素内の <w:documentProtection> 要素を指定している)
+                    var documentProtectionElements = document.MainDocumentPart?.DocumentSettingsPart?.Settings.Elements<DocumentProtection>();
 
-                // 要素 <w:documentProtection> が無い場合(そもそも保護されてない場合など)は、作成したコピーを削除し 保護解除失敗リストに追加。メソッドを抜ける。
-                if (documentProtectionElements is null || documentProtectionElements.Count() == 0)
-                {
-                    document.Close(); // 閉じてからでないと削除できない
-                    File.Delete(wordFile);
-                    FailedFileList.Add(filePath);
-                    return;
-                }
-                else
-                {
-                    foreach (var element in documentProtectionElements)
+                    // 要素 <w:documentProtection> が無い場合(そもそも保護されてない場合など)は、作成したコピーを削除し 保護解除失敗リストに追加。メソッドを抜ける。
+                    if (documentProtectionElements is null || documentProtectionElements.Count() == 0)
                     {
-                        element.Remove();
+                        document.Close(); // 閉じてからでないと削除できない
+                        File.Delete(wordFile);
+                        FailedFileList.Add(filePath);
+                        return;
                     }
-                    document.Save(); // AutoSaveはデフォルトでTrueだから不要かも。
-                    document.Close();
-                    UnprotectedFileList.Add(filePath);
+                    else
+                    {
+                        foreach (var element in documentProtectionElements)
+                        {
+                            element.Remove();
+                        }
+                        document.Save(); // AutoSaveはデフォルトでTrueだから不要かも。
+                        document.Close();
+                        UnprotectedFileList.Add(filePath);
+                    }
                 }
             }
+            // Openメソッドの例外発生時。InvalidDataException：Wordファイル自体が暗号化されている場合/ユーザー認証による編集保護の場合　OpenXmlPackageException：拡張子が.docxだが中身は正しいWordドキュメント形式でない場合
+            catch (Exception e) when (e is InvalidDataException || e is OpenXmlPackageException)
+            {
+                File.Delete(wordFile);
+                FailedFileList.Add(filePath);
+            }
+
         }
 
         /// <summary>
