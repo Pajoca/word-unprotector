@@ -12,7 +12,6 @@ namespace WordUnprotector
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                textBox1.Text = openFileDialog1.FileName;
                 var filePaths = new List<string>() { openFileDialog1.FileName };
 
                 var wordUnprotectLogic = new WordUnprotectLogic(filePaths);
@@ -26,7 +25,6 @@ namespace WordUnprotector
             var result = folderBrowserDialog1.ShowDialog();
             if(result == DialogResult.OK)
             {
-                textBox1.Text = folderBrowserDialog1.SelectedPath;
 
                 var filePaths = new List<string>() { folderBrowserDialog1.SelectedPath };
 
@@ -34,6 +32,20 @@ namespace WordUnprotector
                 wordUnprotectLogic.Unprotect();
                 wordUnprotectLogic.ShowUnprotectionAlert();
             }
+        }
+
+        private void dragAndDropPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = (e.Data.GetDataPresent(DataFormats.FileDrop)) ? DragDropEffects.Copy : DragDropEffects.None;
+        }
+
+        private void dragAndDropPanel_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] draggedAndDroppedPaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            List<string> filePaths = draggedAndDroppedPaths.ToList();
+            var wordUnprotectLogic = new WordUnprotectLogic(filePaths);
+            wordUnprotectLogic.Unprotect();
+            wordUnprotectLogic.ShowUnprotectionAlert();
         }
     }
 }
