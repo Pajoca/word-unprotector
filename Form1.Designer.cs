@@ -71,6 +71,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Multiselect = true;
             // 
             // unprotectSpecifiedFoldersButton
             // 
