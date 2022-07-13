@@ -7,11 +7,10 @@ namespace WordUnprotector
             InitializeComponent();
         }
 
-        private void unprotectSpecifiedFilesButton_Click(object sender, EventArgs e) => UnprotectSpecifiedFiles();
-        private void unprotectSpecifiedFoldersButton_Click(object sender, EventArgs e) => UnprotectSpecifiedFolders();
-        
         private void unprotectSpecifiedFilesMenuItem_Click(object sender, EventArgs e) => UnprotectSpecifiedFiles();
         private void unprotectSpecifiedFoldersMenuItem_Click(object sender, EventArgs e) => UnprotectSpecifiedFolders();
+
+        private void exitMenuItem_Click(object sender, EventArgs e) => this.Close();
 
         private void dragAndDropPanel_DragEnter(object sender, DragEventArgs e)
         {
@@ -37,7 +36,7 @@ namespace WordUnprotector
             var result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                var filePaths = new List<string>() { openFileDialog1.FileName };
+                var filePaths = openFileDialog1.FileNames.ToList();
                 RunWordUnprotectLogic(filePaths);
             }
         }
@@ -66,7 +65,5 @@ namespace WordUnprotector
             wordUnprotectLogic.Unprotect();
             wordUnprotectLogic.ShowUnprotectionAlert();
         }
-
-
     }
 }

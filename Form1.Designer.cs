@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.unprotectSpecifiedFilesButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.unprotectSpecifiedFoldersButton = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,33 +54,10 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // unprotectSpecifiedFilesButton
-            // 
-            this.unprotectSpecifiedFilesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.unprotectSpecifiedFilesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.unprotectSpecifiedFilesButton.Location = new System.Drawing.Point(12, 346);
-            this.unprotectSpecifiedFilesButton.Name = "unprotectSpecifiedFilesButton";
-            this.unprotectSpecifiedFilesButton.Size = new System.Drawing.Size(178, 23);
-            this.unprotectSpecifiedFilesButton.TabIndex = 0;
-            this.unprotectSpecifiedFilesButton.Text = "指定したファイルを保護解除";
-            this.unprotectSpecifiedFilesButton.UseVisualStyleBackColor = true;
-            this.unprotectSpecifiedFilesButton.Click += new System.EventHandler(this.unprotectSpecifiedFilesButton_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Multiselect = true;
-            // 
-            // unprotectSpecifiedFoldersButton
-            // 
-            this.unprotectSpecifiedFoldersButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.unprotectSpecifiedFoldersButton.Location = new System.Drawing.Point(221, 346);
-            this.unprotectSpecifiedFoldersButton.Name = "unprotectSpecifiedFoldersButton";
-            this.unprotectSpecifiedFoldersButton.Size = new System.Drawing.Size(178, 23);
-            this.unprotectSpecifiedFoldersButton.TabIndex = 2;
-            this.unprotectSpecifiedFoldersButton.Text = "フォルダ内を一括保護解除";
-            this.unprotectSpecifiedFoldersButton.UseVisualStyleBackColor = true;
-            this.unprotectSpecifiedFoldersButton.Click += new System.EventHandler(this.unprotectSpecifiedFoldersButton_Click);
             // 
             // menuStrip1
             // 
@@ -131,6 +106,7 @@
             this.exitMenuItem.Name = "exitMenuItem";
             this.exitMenuItem.Size = new System.Drawing.Size(232, 22);
             this.exitMenuItem.Text = "終了(&X)";
+            this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
             // toolMenuItem
             // 
@@ -185,7 +161,7 @@
             this.dragAndDropPanel.Controls.Add(this.label2);
             this.dragAndDropPanel.Controls.Add(this.label1);
             this.dragAndDropPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dragAndDropPanel.Location = new System.Drawing.Point(13, 27);
+            this.dragAndDropPanel.Location = new System.Drawing.Point(13, 35);
             this.dragAndDropPanel.Name = "dragAndDropPanel";
             this.dragAndDropPanel.Size = new System.Drawing.Size(387, 313);
             this.dragAndDropPanel.TabIndex = 4;
@@ -196,7 +172,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 258);
+            this.label2.Location = new System.Drawing.Point(16, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(341, 26);
             this.label2.TabIndex = 1;
@@ -208,7 +184,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(38, 123);
+            this.label1.Location = new System.Drawing.Point(31, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(309, 64);
             this.label1.TabIndex = 0;
@@ -221,7 +197,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.disableShowAlertRadioButton);
             this.panel1.Controls.Add(this.enableShowAlertRadioButton);
-            this.panel1.Location = new System.Drawing.Point(12, 375);
+            this.panel1.Location = new System.Drawing.Point(12, 354);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 54);
             this.panel1.TabIndex = 5;
@@ -261,14 +237,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 438);
+            this.ClientSize = new System.Drawing.Size(416, 413);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dragAndDropPanel);
-            this.Controls.Add(this.unprotectSpecifiedFoldersButton);
-            this.Controls.Add(this.unprotectSpecifiedFilesButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(432, 477);
+            this.MinimumSize = new System.Drawing.Size(432, 452);
             this.Name = "Form1";
             this.Text = "WordUnprotector";
             this.menuStrip1.ResumeLayout(false);
@@ -283,10 +257,7 @@
         }
 
         #endregion
-
-        private Button unprotectSpecifiedFilesButton;
         private OpenFileDialog openFileDialog1;
-        private Button unprotectSpecifiedFoldersButton;
         private FolderBrowserDialog folderBrowserDialog1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem ファイルFToolStripMenuItem;
