@@ -28,67 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.openFileButton = new System.Windows.Forms.Button();
+            this.unprotectSpecifiedFilesButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.openFolderButton = new System.Windows.Forms.Button();
+            this.unprotectSpecifiedFoldersButton = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ファイルを開くOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.フォルダを開くDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unprotectSpecifiedFilesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unprotectSpecifiedFoldersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ツールTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.設定PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ヘルプHToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gitHubリポジトリページGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.バージョン情報AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpParentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.githubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.versionInfoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dragAndDropPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.disableShowAlertRadioButton = new System.Windows.Forms.RadioButton();
+            this.enableShowAlertRadioButton = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.dragAndDropPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // openFileButton
+            // unprotectSpecifiedFilesButton
             // 
-            this.openFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.openFileButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.openFileButton.Location = new System.Drawing.Point(12, 346);
-            this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(178, 23);
-            this.openFileButton.TabIndex = 0;
-            this.openFileButton.Text = "指定したファイルを保護解除";
-            this.openFileButton.UseVisualStyleBackColor = true;
-            this.openFileButton.Click += new System.EventHandler(this.button1_Click);
+            this.unprotectSpecifiedFilesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.unprotectSpecifiedFilesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.unprotectSpecifiedFilesButton.Location = new System.Drawing.Point(12, 346);
+            this.unprotectSpecifiedFilesButton.Name = "unprotectSpecifiedFilesButton";
+            this.unprotectSpecifiedFilesButton.Size = new System.Drawing.Size(178, 23);
+            this.unprotectSpecifiedFilesButton.TabIndex = 0;
+            this.unprotectSpecifiedFilesButton.Text = "指定したファイルを保護解除";
+            this.unprotectSpecifiedFilesButton.UseVisualStyleBackColor = true;
+            this.unprotectSpecifiedFilesButton.Click += new System.EventHandler(this.unprotectSpecifiedFilesButton_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // openFolderButton
+            // unprotectSpecifiedFoldersButton
             // 
-            this.openFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.openFolderButton.Location = new System.Drawing.Point(221, 346);
-            this.openFolderButton.Name = "openFolderButton";
-            this.openFolderButton.Size = new System.Drawing.Size(178, 23);
-            this.openFolderButton.TabIndex = 2;
-            this.openFolderButton.Text = "フォルダ内を一括保護解除";
-            this.openFolderButton.UseVisualStyleBackColor = true;
-            this.openFolderButton.Click += new System.EventHandler(this.button2_Click);
+            this.unprotectSpecifiedFoldersButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.unprotectSpecifiedFoldersButton.Location = new System.Drawing.Point(221, 346);
+            this.unprotectSpecifiedFoldersButton.Name = "unprotectSpecifiedFoldersButton";
+            this.unprotectSpecifiedFoldersButton.Size = new System.Drawing.Size(178, 23);
+            this.unprotectSpecifiedFoldersButton.TabIndex = 2;
+            this.unprotectSpecifiedFoldersButton.Text = "フォルダ内を一括保護解除";
+            this.unprotectSpecifiedFoldersButton.UseVisualStyleBackColor = true;
+            this.unprotectSpecifiedFoldersButton.Click += new System.EventHandler(this.unprotectSpecifiedFoldersButton_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルFToolStripMenuItem,
-            this.ツールTToolStripMenuItem,
-            this.ヘルプHToolStripMenuItem});
+            this.toolMenuItem,
+            this.helpParentMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(416, 24);
@@ -98,78 +98,80 @@
             // ファイルFToolStripMenuItem
             // 
             this.ファイルFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルを開くOToolStripMenuItem,
-            this.フォルダを開くDToolStripMenuItem,
+            this.unprotectSpecifiedFilesMenuItem,
+            this.unprotectSpecifiedFoldersMenuItem,
             this.toolStripMenuItem1,
-            this.終了XToolStripMenuItem});
+            this.exitMenuItem});
             this.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem";
             this.ファイルFToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.ファイルFToolStripMenuItem.Text = "ファイル(&F)";
             // 
-            // ファイルを開くOToolStripMenuItem
+            // unprotectSpecifiedFilesMenuItem
             // 
-            this.ファイルを開くOToolStripMenuItem.Name = "ファイルを開くOToolStripMenuItem";
-            this.ファイルを開くOToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.ファイルを開くOToolStripMenuItem.Text = "指定したファイルを保護解除(&O)...";
+            this.unprotectSpecifiedFilesMenuItem.Name = "unprotectSpecifiedFilesMenuItem";
+            this.unprotectSpecifiedFilesMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.unprotectSpecifiedFilesMenuItem.Text = "指定したファイルを保護解除(&O)...";
+            this.unprotectSpecifiedFilesMenuItem.Click += new System.EventHandler(this.unprotectSpecifiedFilesMenuItem_Click);
             // 
-            // フォルダを開くDToolStripMenuItem
+            // unprotectSpecifiedFoldersMenuItem
             // 
-            this.フォルダを開くDToolStripMenuItem.Name = "フォルダを開くDToolStripMenuItem";
-            this.フォルダを開くDToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.フォルダを開くDToolStripMenuItem.Text = "フォルダ内を一括保護解除(&D)...";
+            this.unprotectSpecifiedFoldersMenuItem.Name = "unprotectSpecifiedFoldersMenuItem";
+            this.unprotectSpecifiedFoldersMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.unprotectSpecifiedFoldersMenuItem.Text = "フォルダ内を一括保護解除(&D)...";
+            this.unprotectSpecifiedFoldersMenuItem.Click += new System.EventHandler(this.unprotectSpecifiedFoldersMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
             // 
-            // 終了XToolStripMenuItem
+            // exitMenuItem
             // 
-            this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
-            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.終了XToolStripMenuItem.Text = "終了(&X)";
+            this.exitMenuItem.Name = "exitMenuItem";
+            this.exitMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.exitMenuItem.Text = "終了(&X)";
             // 
-            // ツールTToolStripMenuItem
+            // toolMenuItem
             // 
-            this.ツールTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.設定PToolStripMenuItem});
-            this.ツールTToolStripMenuItem.Name = "ツールTToolStripMenuItem";
-            this.ツールTToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.ツールTToolStripMenuItem.Text = "ツール(&T)";
+            this.toolMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsMenuItem});
+            this.toolMenuItem.Name = "toolMenuItem";
+            this.toolMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.toolMenuItem.Text = "ツール(&T)";
             // 
-            // 設定PToolStripMenuItem
+            // settingsMenuItem
             // 
-            this.設定PToolStripMenuItem.Name = "設定PToolStripMenuItem";
-            this.設定PToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.設定PToolStripMenuItem.Text = "設定(&P)";
+            this.settingsMenuItem.Name = "settingsMenuItem";
+            this.settingsMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.settingsMenuItem.Text = "設定(&P)";
             // 
-            // ヘルプHToolStripMenuItem
+            // helpParentMenuItem
             // 
-            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ヘルプHToolStripMenuItem1,
-            this.gitHubリポジトリページGToolStripMenuItem,
-            this.バージョン情報AToolStripMenuItem});
-            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
-            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.ヘルプHToolStripMenuItem.Text = "ヘルプ(&H)";
+            this.helpParentMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpMenuItem,
+            this.githubMenuItem,
+            this.versionInfoMenuItem});
+            this.helpParentMenuItem.Name = "helpParentMenuItem";
+            this.helpParentMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.helpParentMenuItem.Text = "ヘルプ(&H)";
             // 
-            // ヘルプHToolStripMenuItem1
+            // helpMenuItem
             // 
-            this.ヘルプHToolStripMenuItem1.Name = "ヘルプHToolStripMenuItem1";
-            this.ヘルプHToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
-            this.ヘルプHToolStripMenuItem1.Text = "ヘルプ(&H)";
+            this.helpMenuItem.Name = "helpMenuItem";
+            this.helpMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.helpMenuItem.Text = "ヘルプ(&H)";
             // 
-            // gitHubリポジトリページGToolStripMenuItem
+            // githubMenuItem
             // 
-            this.gitHubリポジトリページGToolStripMenuItem.Name = "gitHubリポジトリページGToolStripMenuItem";
-            this.gitHubリポジトリページGToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.gitHubリポジトリページGToolStripMenuItem.Text = "GitHub リポジトリページ(&G)";
+            this.githubMenuItem.Name = "githubMenuItem";
+            this.githubMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.githubMenuItem.Text = "GitHub リポジトリページ(&G)";
             // 
-            // バージョン情報AToolStripMenuItem
+            // versionInfoMenuItem
             // 
-            this.バージョン情報AToolStripMenuItem.Name = "バージョン情報AToolStripMenuItem";
-            this.バージョン情報AToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.バージョン情報AToolStripMenuItem.Text = "バージョン情報(&A)...";
+            this.versionInfoMenuItem.Name = "versionInfoMenuItem";
+            this.versionInfoMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.versionInfoMenuItem.Text = "バージョン情報(&A)...";
             // 
             // dragAndDropPanel
             // 
@@ -216,8 +218,8 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.disableShowAlertRadioButton);
+            this.panel1.Controls.Add(this.enableShowAlertRadioButton);
             this.panel1.Location = new System.Drawing.Point(12, 375);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 54);
@@ -232,27 +234,27 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "警告メッセージの表示：";
             // 
-            // radioButton2
+            // disableShowAlertRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(209, 17);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "非表示";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.disableShowAlertRadioButton.AutoSize = true;
+            this.disableShowAlertRadioButton.Location = new System.Drawing.Point(209, 17);
+            this.disableShowAlertRadioButton.Name = "disableShowAlertRadioButton";
+            this.disableShowAlertRadioButton.Size = new System.Drawing.Size(61, 19);
+            this.disableShowAlertRadioButton.TabIndex = 1;
+            this.disableShowAlertRadioButton.TabStop = true;
+            this.disableShowAlertRadioButton.Text = "非表示";
+            this.disableShowAlertRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // enableShowAlertRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(142, 17);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(49, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "表示";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.enableShowAlertRadioButton.AutoSize = true;
+            this.enableShowAlertRadioButton.Location = new System.Drawing.Point(142, 17);
+            this.enableShowAlertRadioButton.Name = "enableShowAlertRadioButton";
+            this.enableShowAlertRadioButton.Size = new System.Drawing.Size(49, 19);
+            this.enableShowAlertRadioButton.TabIndex = 0;
+            this.enableShowAlertRadioButton.TabStop = true;
+            this.enableShowAlertRadioButton.Text = "表示";
+            this.enableShowAlertRadioButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -261,8 +263,8 @@
             this.ClientSize = new System.Drawing.Size(416, 438);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dragAndDropPanel);
-            this.Controls.Add(this.openFolderButton);
-            this.Controls.Add(this.openFileButton);
+            this.Controls.Add(this.unprotectSpecifiedFoldersButton);
+            this.Controls.Add(this.unprotectSpecifiedFilesButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(432, 477);
@@ -281,28 +283,28 @@
 
         #endregion
 
-        private Button openFileButton;
+        private Button unprotectSpecifiedFilesButton;
         private OpenFileDialog openFileDialog1;
-        private Button openFolderButton;
+        private Button unprotectSpecifiedFoldersButton;
         private FolderBrowserDialog folderBrowserDialog1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem ファイルFToolStripMenuItem;
-        private ToolStripMenuItem ファイルを開くOToolStripMenuItem;
-        private ToolStripMenuItem フォルダを開くDToolStripMenuItem;
+        private ToolStripMenuItem unprotectSpecifiedFilesMenuItem;
+        private ToolStripMenuItem unprotectSpecifiedFoldersMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem 終了XToolStripMenuItem;
-        private ToolStripMenuItem ツールTToolStripMenuItem;
-        private ToolStripMenuItem ヘルプHToolStripMenuItem;
-        private ToolStripMenuItem 設定PToolStripMenuItem;
-        private ToolStripMenuItem ヘルプHToolStripMenuItem1;
-        private ToolStripMenuItem gitHubリポジトリページGToolStripMenuItem;
-        private ToolStripMenuItem バージョン情報AToolStripMenuItem;
+        private ToolStripMenuItem exitMenuItem;
+        private ToolStripMenuItem toolMenuItem;
+        private ToolStripMenuItem helpParentMenuItem;
+        private ToolStripMenuItem settingsMenuItem;
+        private ToolStripMenuItem helpMenuItem;
+        private ToolStripMenuItem githubMenuItem;
+        private ToolStripMenuItem versionInfoMenuItem;
         private Panel dragAndDropPanel;
         private Label label1;
         private Label label2;
         private Panel panel1;
         private Label label3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton disableShowAlertRadioButton;
+        private RadioButton enableShowAlertRadioButton;
     }
 }
