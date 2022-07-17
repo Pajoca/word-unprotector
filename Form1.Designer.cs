@@ -37,11 +37,12 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openApplicationDirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpParentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.githubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.versionInfoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutBoxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dragAndDropPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,49 +86,53 @@
             // unprotectSpecifiedFilesMenuItem
             // 
             this.unprotectSpecifiedFilesMenuItem.Name = "unprotectSpecifiedFilesMenuItem";
-            this.unprotectSpecifiedFilesMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.unprotectSpecifiedFilesMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.unprotectSpecifiedFilesMenuItem.Size = new System.Drawing.Size(274, 22);
             this.unprotectSpecifiedFilesMenuItem.Text = "指定したファイルを保護解除(&O)...";
             this.unprotectSpecifiedFilesMenuItem.Click += new System.EventHandler(this.unprotectSpecifiedFilesMenuItem_Click);
             // 
             // unprotectSpecifiedFoldersMenuItem
             // 
             this.unprotectSpecifiedFoldersMenuItem.Name = "unprotectSpecifiedFoldersMenuItem";
-            this.unprotectSpecifiedFoldersMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.unprotectSpecifiedFoldersMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.unprotectSpecifiedFoldersMenuItem.Size = new System.Drawing.Size(274, 22);
             this.unprotectSpecifiedFoldersMenuItem.Text = "フォルダ内を一括保護解除(&D)...";
             this.unprotectSpecifiedFoldersMenuItem.Click += new System.EventHandler(this.unprotectSpecifiedFoldersMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(229, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(271, 6);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.exitMenuItem.Size = new System.Drawing.Size(274, 22);
             this.exitMenuItem.Text = "終了(&X)";
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
             // toolMenuItem
             // 
             this.toolMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsMenuItem});
+            this.openApplicationDirectoryMenuItem});
             this.toolMenuItem.Name = "toolMenuItem";
             this.toolMenuItem.Size = new System.Drawing.Size(60, 20);
             this.toolMenuItem.Text = "ツール(&T)";
             // 
-            // settingsMenuItem
+            // openApplicationDirectoryMenuItem
             // 
-            this.settingsMenuItem.Name = "settingsMenuItem";
-            this.settingsMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.settingsMenuItem.Text = "設定(&P)";
+            this.openApplicationDirectoryMenuItem.Name = "openApplicationDirectoryMenuItem";
+            this.openApplicationDirectoryMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.openApplicationDirectoryMenuItem.Text = "ソフトの場所を開く(&O)";
+            this.openApplicationDirectoryMenuItem.Click += new System.EventHandler(this.openApplicationDirectoryMenuItem_Click);
             // 
             // helpParentMenuItem
             // 
             this.helpParentMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpMenuItem,
             this.githubMenuItem,
-            this.versionInfoMenuItem});
+            this.toolStripMenuItem2,
+            this.aboutBoxMenuItem});
             this.helpParentMenuItem.Name = "helpParentMenuItem";
             this.helpParentMenuItem.Size = new System.Drawing.Size(65, 20);
             this.helpParentMenuItem.Text = "ヘルプ(&H)";
@@ -135,20 +140,28 @@
             // helpMenuItem
             // 
             this.helpMenuItem.Name = "helpMenuItem";
-            this.helpMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.helpMenuItem.Text = "ヘルプ(&H)";
+            this.helpMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.helpMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.helpMenuItem.Text = "ヘルプ(&H) [Web]";
             // 
             // githubMenuItem
             // 
             this.githubMenuItem.Name = "githubMenuItem";
-            this.githubMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.githubMenuItem.Text = "GitHub リポジトリページ(&G)";
+            this.githubMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.githubMenuItem.Text = "GitHub リポジトリページ(&G) [Web]";
+            this.githubMenuItem.Click += new System.EventHandler(this.githubMenuItem_Click);
             // 
-            // versionInfoMenuItem
+            // toolStripMenuItem2
             // 
-            this.versionInfoMenuItem.Name = "versionInfoMenuItem";
-            this.versionInfoMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.versionInfoMenuItem.Text = "バージョン情報(&A)...";
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(229, 6);
+            // 
+            // aboutBoxMenuItem
+            // 
+            this.aboutBoxMenuItem.Name = "aboutBoxMenuItem";
+            this.aboutBoxMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.aboutBoxMenuItem.Text = "WordUnprotector について(&A)...";
+            this.aboutBoxMenuItem.Click += new System.EventHandler(this.aboutBoxMenuItem_Click);
             // 
             // dragAndDropPanel
             // 
@@ -268,10 +281,10 @@
         private ToolStripMenuItem exitMenuItem;
         private ToolStripMenuItem toolMenuItem;
         private ToolStripMenuItem helpParentMenuItem;
-        private ToolStripMenuItem settingsMenuItem;
+        private ToolStripMenuItem openApplicationDirectoryMenuItem;
         private ToolStripMenuItem helpMenuItem;
         private ToolStripMenuItem githubMenuItem;
-        private ToolStripMenuItem versionInfoMenuItem;
+        private ToolStripMenuItem aboutBoxMenuItem;
         private Panel dragAndDropPanel;
         private Label label1;
         private Label label2;
@@ -279,5 +292,6 @@
         private Label label3;
         private RadioButton disableShowAlertRadioButton;
         private RadioButton enableShowAlertRadioButton;
+        private ToolStripSeparator toolStripMenuItem2;
     }
 }

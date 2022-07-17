@@ -6,6 +6,20 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version>$(VersionPrefix)</Version>
+    <Authors>Pajoca</Authors>
+    <Company />
+    <Description>Word文書ファイルにかけられた編集保護を、パスワード不要で強制解除できるソフトウェアです。オフラインで全ての処理が完結する仕様なのでプライバシーが確保できます。
+
+●ライセンスについて
+　本ソフトウェアおよびソースコードは著作権を放棄し CC0 の下、公開・配布しています。ユーザーの皆様は自由に変更・再配布可能で商用・非商用問わず一切の許諾・クレジット表示なしにお使いいただけます。著作権を放棄している具体的な範囲は以下のページに記載しているのでご確認ください。
+https://github.com/Pajoca/drag-and-drop-batch-generator-for-ps1
+　なお、CC0については以下URLから参照可能です。
+https://creativecommons.org/publicdomain/zero/1.0/deed.ja</Description>
+    <Copyright>ライセンス：CC0 (著作権を放棄：下記説明参照)</Copyright>
+    <PackageProjectUrl>https://github.com/Pajoca/word-unprotector</PackageProjectUrl>
+    <AssemblyVersion>1.0.5</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

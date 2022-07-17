@@ -21,12 +21,30 @@ namespace WordUnprotector
             }
         }
 
-
+        // 「ファイル」メニュー
         private void unprotectSpecifiedFilesMenuItem_Click(object sender, EventArgs e) => UnprotectSpecifiedFiles();
         private void unprotectSpecifiedFoldersMenuItem_Click(object sender, EventArgs e) => UnprotectSpecifiedFolders();
-
         private void exitMenuItem_Click(object sender, EventArgs e) => this.Close();
 
+        // 「ツール」メニュー
+        private void openApplicationDirectoryMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("EXPLORER.EXE", Application.StartupPath);
+        }
+
+        // 「ヘルプ」メニュー
+        private void githubMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://github.com/Pajoca/word-unprotector");
+        }
+
+        private void aboutBoxMenuItem_Click(object sender, EventArgs e)
+        {
+            var aboutBox = new AboutBox1();
+            aboutBox.Show();
+        }
+
+        // ドラッグ＆ドロップエリア
         private void dragAndDropPanel_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = (e.Data.GetDataPresent(DataFormats.FileDrop)) ? DragDropEffects.Copy : DragDropEffects.None;
@@ -38,6 +56,7 @@ namespace WordUnprotector
             List<string> filePaths = draggedAndDroppedPaths.ToList();
             RunWordUnprotectLogic(filePaths);
         }
+
 
         /// <summary>
         /// フォーム終了前にラジオボタンに設定されている設定値を読み込み、iniファイルに書き込む
@@ -88,6 +107,20 @@ namespace WordUnprotector
             var wordUnprotectLogic = new WordUnprotectLogic(filePaths){ IsAlertEnabled = enableShowAlertRadioButton.Checked };
             wordUnprotectLogic.Unprotect();
             wordUnprotectLogic.ShowUnprotectionAlert();
+        }
+
+        /// <summary>
+        /// 指定したURLを既定のブラウザで開く
+        /// </summary>
+        /// <param name="url">URL</param>
+        private void OpenUrl(string url)
+        {
+            var processStartInfo = new System.Diagnostics.ProcessStartInfo()
+            {
+                UseShellExecute = true,
+                FileName = url,
+            };
+            System.Diagnostics.Process.Start(processStartInfo);
         }
     }
 }
