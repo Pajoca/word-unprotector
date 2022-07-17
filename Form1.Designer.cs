@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -154,12 +155,12 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(229, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(235, 6);
             // 
             // aboutBoxMenuItem
             // 
             this.aboutBoxMenuItem.Name = "aboutBoxMenuItem";
-            this.aboutBoxMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.aboutBoxMenuItem.Size = new System.Drawing.Size(238, 22);
             this.aboutBoxMenuItem.Text = "WordUnprotector について(&A)...";
             this.aboutBoxMenuItem.Click += new System.EventHandler(this.aboutBoxMenuItem_Click);
             // 
@@ -254,6 +255,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dragAndDropPanel);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(432, 452);
             this.Name = "Form1";
