@@ -10,6 +10,12 @@ namespace WordUnprotector
 {
     internal class IniFile
     {
+        /// <summary>
+        /// 作成・読込するiniファイルのデフォルト名。
+        /// </summary>
+        public static string IniFileDefaultName { get; set; } = "Settings.ini";
+        // "settings.ini" の代わりに ApplicationName + ".ini" などをデフォルト名として設定するのも良い。(任意)
+
         private readonly string IniFilePath;
         private readonly string ApplicationName = Assembly.GetExecutingAssembly().GetName().Name!;
 
@@ -24,13 +30,12 @@ namespace WordUnprotector
         /// 読み込み・編集対象のiniファイルを設定するコンストラクタ。
         /// 引数で指定されたファイル名のiniファイルを対象として設定する。
         /// (同じファイル名でiniが既に存在する場合はそれを、無ければその名前を持つ新しいiniを操作対象とする。)
-        /// (引数が省略された場合、「アプリケーション名.ini」を操作対象とする。)
-        /// 引数は相対パス。例えば単に「"settings.ini"」を渡した場合はアプリケーションの実行ファイル(.exe)と同じディレクトリの settings.ini が操作対象となる。
+        /// 引数は相対パス。例えば単に「"Settings.ini"」を渡した場合はアプリケーションの実行ファイル(.exe)と同じディレクトリの Settings.ini が操作対象となる。
         /// </summary>
         /// <param name="iniFileName">iniファイル名(相対パス・省略可)</param>
         public IniFile(string? iniFileName = null)
         {
-            IniFilePath = new FileInfo(iniFileName ?? ApplicationName + ".ini").FullName;
+            IniFilePath = new FileInfo(iniFileName ?? IniFileDefaultName).FullName;
         }
 
 
@@ -87,6 +92,19 @@ namespace WordUnprotector
         public bool KeyExists(string key, string? section = null)
         {
             return Read(key, section).Length > 0;
+        }
+
+
+        /// <summary>
+        /// 指定したファイル名のiniファイルがアプリケーションと同じディレクトリに存在するかどうか返す。
+        /// 引数はアプリケーション本体(.exe)のパスを基準とした相対パス。(ファイル名単独を指定した場合はexeと同ディレクトリ。)
+        /// 引数を省略した場合は、IniFileDefaultNameプロパティで設定されたファイル名のiniファイルが存在するか返す。
+        /// </summary>
+        /// <param name="iniFileName">iniファイル名(拡張子含む・相対パス)</param>
+        /// <returns>指定したiniファイルが存在すればtrue</returns>
+        public static bool IniFileExists(string? iniFileName = null)
+        {
+            return File.Exists(iniFileName ?? IniFileDefaultName);
         }
     }
 }

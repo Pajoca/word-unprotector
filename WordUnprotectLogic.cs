@@ -30,6 +30,12 @@ namespace WordUnprotector
             FilePaths = filePaths;
         }
 
+
+        /// <summary>
+        /// falseを指定した場合、ShowUnprotectionAlert()メソッドを実行しても警告メッセージを表示しない。(デフォルトはtrue)
+        /// </summary>
+        public bool IsAlertEnabled { get; set; } = true;
+
         /// <summary>
         ///  保護解除対象のファイルのフルパスリスト(Wordファイル以外のファイルやフォルダを含んでいても問題ない)
         /// </summary>
@@ -78,6 +84,8 @@ namespace WordUnprotector
         /// </summary>
         public void ShowUnprotectionAlert()
         {
+            if (IsAlertEnabled == false) { return; }
+
             if (OldTypeFileList.Count > 0)
             {
                 var displayText = (UnprotectedFileList.Count == 0) ? _OldWordFileAlertText1 : _OldWordFileAlertText2;

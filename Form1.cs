@@ -5,7 +5,22 @@ namespace WordUnprotector
         public Form1()
         {
             InitializeComponent();
+
+            if (IniFile.IniFileExists()) //Settings.ini存在時は設定値を読み込む
+            {
+                var iniFile = new IniFile();
+                var isAlertEnabled = bool.Parse(iniFile.Read("IsAlertEnabled"));
+                if (isAlertEnabled)
+                {
+                    enableShowAlertRadioButton.Checked = true;
+                }
+                else
+                {
+                    disableShowAlertRadioButton.Checked = true;
+                }
+            }
         }
+
 
         private void unprotectSpecifiedFilesMenuItem_Click(object sender, EventArgs e) => UnprotectSpecifiedFiles();
         private void unprotectSpecifiedFoldersMenuItem_Click(object sender, EventArgs e) => UnprotectSpecifiedFolders();
@@ -24,6 +39,15 @@ namespace WordUnprotector
             RunWordUnprotectLogic(filePaths);
         }
 
+        /// <summary>
+        /// フォーム終了前にラジオボタンに設定されている設定値を読み込み、iniファイルに書き込む
+        /// </summary>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var iniFile = new IniFile();
+            var isAlertEnabled = enableShowAlertRadioButton.Checked;
+            iniFile.Write("IsAlertEnabled", isAlertEnabled.ToString());
+        }
 
 
         // 以下、各イベントで共通の処理をメソッドにして共通化
@@ -61,7 +85,7 @@ namespace WordUnprotector
         /// <param name="filePaths">ファイルパス</param>
         private void RunWordUnprotectLogic(List<string> filePaths)
         {
-            var wordUnprotectLogic = new WordUnprotectLogic(filePaths);
+            var wordUnprotectLogic = new WordUnprotectLogic(filePaths){ IsAlertEnabled = enableShowAlertRadioButton.Checked };
             wordUnprotectLogic.Unprotect();
             wordUnprotectLogic.ShowUnprotectionAlert();
         }

@@ -19,6 +19,11 @@ namespace WordUnprotector
             else // コマンドライン引数があればフォームを起動せず、直接それをWordUnprotectLogicに渡す
             {
                 var wordUnprotectLogic = new WordUnprotectLogic(filePaths);
+                if (IniFile.IniFileExists()) //Settings.ini存在時は設定値を読み込む
+                {
+                    var iniFile = new IniFile();
+                    wordUnprotectLogic.IsAlertEnabled = bool.Parse(iniFile.Read("IsAlertEnabled"));
+                }
                 wordUnprotectLogic.Unprotect();
                 wordUnprotectLogic.ShowUnprotectionAlert();
             }

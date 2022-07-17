@@ -218,13 +218,13 @@
             this.disableShowAlertRadioButton.Name = "disableShowAlertRadioButton";
             this.disableShowAlertRadioButton.Size = new System.Drawing.Size(61, 19);
             this.disableShowAlertRadioButton.TabIndex = 1;
-            this.disableShowAlertRadioButton.TabStop = true;
             this.disableShowAlertRadioButton.Text = "非表示";
             this.disableShowAlertRadioButton.UseVisualStyleBackColor = true;
             // 
             // enableShowAlertRadioButton
             // 
             this.enableShowAlertRadioButton.AutoSize = true;
+            this.enableShowAlertRadioButton.Checked = true;
             this.enableShowAlertRadioButton.Location = new System.Drawing.Point(142, 17);
             this.enableShowAlertRadioButton.Name = "enableShowAlertRadioButton";
             this.enableShowAlertRadioButton.Size = new System.Drawing.Size(49, 19);
@@ -245,6 +245,7 @@
             this.MinimumSize = new System.Drawing.Size(432, 452);
             this.Name = "Form1";
             this.Text = "WordUnprotector";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.dragAndDropPanel.ResumeLayout(false);
