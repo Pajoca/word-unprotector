@@ -33,6 +33,11 @@ namespace WordUnprotector
         }
 
         // 「ヘルプ」メニュー
+        private void helpMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://pajoca.com/word-unprotector/");
+        }
+
         private void githubMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("https://github.com/Pajoca/word-unprotector");

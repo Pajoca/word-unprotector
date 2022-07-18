@@ -144,6 +144,7 @@
             this.helpMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.helpMenuItem.Size = new System.Drawing.Size(238, 22);
             this.helpMenuItem.Text = "ヘルプ(&H) [Web]";
+            this.helpMenuItem.Click += new System.EventHandler(this.helpMenuItem_Click);
             // 
             // githubMenuItem
             // 
